@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario de Contacto</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GOOGLE FONTs -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- ANIMATE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+  <!-- Agregado para la barra superior -->
+  <div class="top-bar">
+    <div class="language-dropdown">
+      <button id="languageBtn">Idioma</button>
+      <div class="dropdown-content">
+        <!-- Agrega aquí las opciones de idioma -->
+        <a href="#">Español</a>
+        <a href="#">Inglés</a>
+        <!-- Agrega más idiomas si es necesario -->
+      </div>
+    </div>
+    <div class="social-icons">
+      <!-- Agrega aquí tus iconos de redes sociales -->
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <!-- Agrega más iconos según sea necesario -->
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar__brand">
+      <a title="Logo" href="../../index.html">
+        <img src="../../images/logoB.png" alt="Logo (Corporación UNSA)" />
+      </a>
+    </div>
+    <nav class="navbar__menu">
+      <ul>
+        <li>
+          <a href="../../index.html">Inicio</a>
+          <ul class="navbar__submenu">
+            <li><a href="#">Opción 1 (paginas webs secundarias)</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <!-- Agrega más opciones según sea necesario -->
+          </ul>
+        </li>
+        <li><a href="../../pages/noticias/noticias.html">Noticias</a></li>
+        <li><a href="../../pages/acerca/acerca.html">Acerca de</a></li>
+        <li><a href="../../pages/contacto/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="../../pages/donar/donar.html">
+      <button class="donate-button">Donar</button>
+    </a>  </header>
+
+<!-- Formulario de contacto avanzado -->
+<div class="container">
+<div class="contact-form-container">
+    <div class="contact-form-wrapper">
+      <h2 class="form-title">¡Contáctanos!</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <div class="half">
+            <label for="firstName">Nombre y apellido:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="subject">Asunto:</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="submit-button">Enviar Mensaje</button>
+        </div>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h4>Información de Contacto</h4>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle 123, Ciudad, País</li>
+        <li><i class="fas fa-phone"></i> Teléfono: +123 456 789</li>
+        <li><i class="fas fa-envelope"></i> Email: info@tuempresa.com</li>
+      </ul>
+      <div id="map">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.639439389647!2d-78.55071997859223!3d-3.4571012133363173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cc6500ea834c1f%3A0xb3e69765bd63adea!2sMisi%C3%B3n%20Salesiana%20de%20Bomboiza!5e0!3m2!1ses-419!2sec!4v1701384961267!5m2!1ses-419!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer>
+	<div>
+		<h2>Contacto</h2>
+		<p>¡Envíanos tus comentarios y sugerencias!</p>
+		<!-- Formulario de contacto con estilos avanzados -->
+		<form>
+			<label for="nombre">Nombre:</label>
+			<input type="text" id="nombre" name="nombre" required>
+			<label for="mensaje">Mensaje:</label>
+			<textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+			<button type="submit">Enviar</button>
+		</form>
+    </div>
+	<div>
+		<h2>Redes Sociales</h2>
+		<!-- Enlaces a tus redes sociales con iconos -->
+		<div class="social-icons">
+			<a href="#" target="_blank">Facebook</a>
+			<a href="#" target="_blank">Twitter</a>
+			<a href="#" target="_blank">Instagram</a>
+		</div>
+	</div>
+	<div>
+		<h2>¿Cómo te sientes con nuestro sitio?</h2>
+		<!-- Botones de caritas para evaluar con efecto de escala al pasar el ratón -->
+		<div class="rating-buttons">
+			<button>😡</button>
+			<button>😐</button>
+			<button>😊</button>
+		</div>
+	</div>
+</footer>
+
+  <!-- Script de validación de formulario -->
+  <script src="form-validation.js"></script>
+  <!-- Script para Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+  <script src="scripts.js"></script>
+  
+</body>
+</html>

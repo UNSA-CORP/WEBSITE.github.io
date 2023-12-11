@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+/* Agrega estos estilos al principio del archivo */
+
+/* Estilos para la barra superior */
+.top-bar {
+    background-color: #004643;
+    color: white;
+    padding: 3px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .language-dropdown {
+    position: relative;
+    display: inline-block;
+    color: #fff; /* Añadido para que el texto sea visible */
+  }
+  
+  #languageBtn {
+    background-color: transparent;
+    font-size: 15px;
+    color: #abd1c6;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  .dropdown-content a {
+    color: #000;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .language-dropdown:hover .dropdown-content {
+    display: block; /* Añadido para mostrar el menú al pasar el ratón */
+  }
+  
+  .social-icons a {
+    color: #abd1c6;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  
+  /* Agrega estilos específicos para tus iconos de redes sociales si es necesario */
+  
+/* Estilos básicos para la barra de navegación */
+.navbar {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  background-color: rgba(78, 78, 78, 0);
+  color: white;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  transition: transform 0s ease, background-color 1s ease;
+}
+
+/* Estilos para el logo */
+.navbar__brand img {
+  height: 70px;
+  width: 100px;
+  cursor: pointer;
+}
+
+/* Estilos para la lista de menú */
+.navbar__menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para cada elemento de la lista de menú */
+.navbar__menu li {
+  position: relative;
+  margin-right: 15px; /* Reducido el margen para mejor apariencia */
+}
+
+/* Estilos para los enlaces del menú */
+.navbar__menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px; /* Reducido el tamaño de la fuente */
+  padding: 8px 12px; /* Ajustado el relleno */
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Efecto de línea al pasar el ratón para el menú */
+.navbar__menu a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  transition: width 0.3s ease;
+}
+
+.navbar__menu a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Estilos para el despliegue de opciones */
+.navbar__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(78, 78, 78, 0.9);
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+  transition: opacity 0.3s ease; /* Agregada transición de opacidad */
+  opacity: 0;
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__menu li:hover .navbar__submenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 1;
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__submenu a {
+  color: white;
+  padding: 8px 12px; /* Ajustado el relleno */
+  display: block;
+  font-size: 14px; /* Reducido el tamaño de la fuente */
+  text-align: left; /* Alineado el texto a la izquierda */
+  border: none; /* Eliminado el borde */
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__submenu a::after {
+  content: ''; 
+  display: none; /* Asegurémonos de que las líneas no se muestren */
+}
+
+.navbar__submenu a:hover {
+  background-color: rgba(139, 139, 139, 0.137);
+}
+
+
+/* Estilos para el botón de donar */
+.donate-button {
+  background-color: #f9bc60;
+  color: #333;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.donate-button:hover {
+  background-color: #ddc980;
+}
+
+
+  /* Tu código actual de CSS va aquí */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: 0;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#004643, #e8e4e6);
+  overflow:none; /* Cambia hidden por auto para mostrar la barra de desplazamiento */
+}
+
+html{
+  background: linear-gradient(#e8e4e6,#004643);
+}
+
+/* Estilos avanzados para el formulario de donación */
+  
+  .container {
+    max-width: 90%;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease-in-out;
+  }
+  
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .header img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .header h1 {
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .info-text {
+    color: #555;
+    animation: fadeIn 1s ease-in-out;
+  }
+  /* Estilos adicionales para la tarjeta y las opciones de cantidad */
+.card {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.amount-options {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0%; /* Ajusta el espacio entre botones */
+}
+
+.amount-option {
+  padding: 12px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.amount-option:hover {
+  background-color: #4CAF50;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.amount-option:active {
+  transform: scale(0.95);
+}
+
+.custom-amount-input {
+  display: none;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.custom-amount-input input {
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  width: 80%;
+}
+
+.custom-amount-input button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.custom-amount-input button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.custom-amount-input button:active {
+  transform: scale(0.95);
+}
+
+/* Estilos adicionales para las opciones de pago */
+.payment-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-options button {
+  padding: 12px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.payment-options button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.payment-options button:active {
+  transform: translateY(3px);
+}
+
+/* Colores específicos para los botones de pago */
+#paymentOptionsCard {
+  display: flex;
+  align-items: center;
+}
+
+#paymentOptionsCard h2 {
+  margin-bottom: 10px;
+}
+
+#stripeBtn, #paypalBtn {
+  padding: 12px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#stripeBtn:hover, #paypalBtn:hover {
+  background-color: #4CAF50;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+#stripeBtn:active, #paypalBtn:active {
+  transform: translateY(3px);
+}
+
+
+
+  
+  
+  
+/* Estilos para el pie de página */
+footer {
+    background-color: #001e1d;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  footer div {
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer form label, form textarea, form button {
+    margin: 10px 0;
+  }
+  
+  footer button {
+    background-color: #188b21;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  footer button:hover {
+    background-color: #155a13;
+  }
+  
+  footer .social-icons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  footer .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    color: #ffc107;
+  }
+  
+  footer .rating-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  footer .rating-buttons button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  footer .rating-buttons button:hover {
+    transform: scale(1.2);
+  }
+
+
+
+
+

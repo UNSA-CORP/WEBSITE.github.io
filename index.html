@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="UTF-8">
+  <title>CORPORACIÓN UNSA</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- Agregado para la barra superior -->
+<div class="top-bar">
+    <div class="language-dropdown">
+      <button id="languageBtn">Idioma</button>
+      <div class="dropdown-content">
+        <!-- Agrega aquí las opciones de idioma -->
+        <a href="#">Español</a>
+        <a href="#">Inglés</a>
+        <!-- Agrega más idiomas si es necesario -->
+      </div>
+    </div>
+    <div class="social-icons">
+      <!-- Agrega aquí tus iconos de redes sociales -->
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <!-- Agrega más iconos según sea necesario -->
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar__brand">
+        <a title="Logo" href="index.html">
+            <img src="images/logoB.png" alt="Logo (Corporación UNSA)" />
+        </a>
+    </div>
+    <nav class="navbar__menu">
+        <ul>
+            <li>
+                <a href="index.html">Inicio</a>
+                <ul class="navbar__submenu">
+                    <li><a href="#">Opción 1 (paginas webs secundarias)</a></li>
+                    <li><a href="#">Opción 2</a></li>
+                    <!-- Agrega más opciones según sea necesario -->
+                </ul>
+            </li>
+            <li><a href="pages/noticias/noticias.html">Noticias</a></li>
+            <li><a href="pages/acerca/acerca.html">Acerca de</a></li>
+            <li><a href="pages/contacto/contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+	<a href="pages/donar/donar.html">
+    <button class="donate-button">Donar</button>
+	</a>
+</header>
+
+
+
+<!-- partial:index.partial.html -->
+<div class="app">
+
+	<div class="cardList">
+		<button class="cardList__btn btn btn--left">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-left"></use>
+				</svg>
+			</div>
+		</button>
+
+		<div class="cards__wrapper">
+			<div class="card current--card">
+				<div class="card__image">
+					<img src="images/unsa.jpg" alt="img_1" />
+				</div>
+			</div>
+
+			<div class="card next--card">
+				<div class="card__image">
+					<img src="images/ftm.png" alt="img_2" />
+				</div>
+			</div>
+
+			<div class="card previous--card">
+				<div class="card__image">
+					<img src="images/lid.jpg" alt="img_3" />
+				</div>
+			</div>
+		</div>
+
+		<button class="cardList__btn btn btn--right">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-right"></use>
+				</svg>
+			</div>
+		</button>
+	</div>
+
+	<div class="infoList">
+		<div class="info__wrapper">
+			<div class="info current--info">
+				<h1 class="text name">Conoce más</h1>
+				<h4 class="text location">CONTENIDO</h4>
+				<p class="text description">Contenido</p>
+			</div>
+
+			<div class="info next--info">
+				<h1 class="text name">Conoce más</h1>
+				<h4 class="text location">CONTENIDO</h4>
+				<p class="text description">Contenido</p>
+			</div>
+
+			<div class="info previous--info">
+				<h1 class="text name">Conoce más</h1>
+				<h4 class="text location">CONTENIDO</h4>
+				<p class="text description">Contenido</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="app__bg">
+		<div class="app__bg__image current--image">
+            <img src="images/unsa.jpg" alt="img_1" />
+		</div>
+		<div class="app__bg__image next--image">
+            <img src="images/ftm.png" alt="img_2" />
+		</div>
+		<div class="app__bg__image previous--image">
+            <img src="images/lid.jpg" alt="img_3" />
+		</div>
+	</div>
+</div>
+
+
+<div class="loading__wrapper">
+	<div class="loader--text">Loading...</div>
+	<div class="loader">
+		<span></span>
+	</div>
+</div>
+
+
+<svg class="icons" style="display: none;">
+	<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='328 112 184 256 328 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+	<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='184 112 328 256 184 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+</svg>
+
+
+<div class="support">
+	<!-- <a href="" target="_blank"><i class="fab fa-instagram"></i></a> -->
+</div>
+
+<section class="unsa-section">
+    <div class="intro-box">
+        <h2>LA NACIONALIDAD SHUAR</h2>
+        <p>
+            Los Shuar somos el grupo ancestral más grande de la Amazonía Ecuatoriana, con una población aproximada de 100 mil habitantes (iwgia.org, 2020).
+            Nuestra cosmovisión encierra enigmáticas leyes de respeto a nuestro planeta, donde toda manifestación natural y humana tiene una respuesta espiritual cósmica transmitida por Arutam (Dios de los Shuar).
+            Estos rasgos culturales de vida se han constituido en elementos vitales de supervivencia y sabiduría, permitiendo que nos desarrollemos conviviendo en armonía con la naturaleza.
+            Es así que mediante el lenguaje oral se ha transmitido los diversos saberes ancestrales de generación en generación, los valores y costumbres a nivel material y espiritual, donde se conserva como un legado de vida.
+            Sin embargo, en las primeras décadas del siglo XX, el Shuar comenzó a experimentar cambios con la llegada de las misiones salesianas, que se establecieron en nuestro territorio con fines de evangelización...
+        </p>
+    </div>
+
+    <div class="action-section">
+        <div class="column vision">
+            <div class="title-box">
+                <h3>VISIÓN</h3>
+            </div>
+            <div class="action-box vision-box">
+                <p>Fortalecer las capacidades de la población para contribuir al uso sostenible de los recursos amazónicos renovables y no renovables, que beneficien a las futuras generaciones.</p>
+            </div>
+        </div>
+
+        <div class="column mission">
+            <div class="title-box">
+                <h3>MISIÓN</h3>
+            </div>
+            <div class="action-box mission-box">
+                <p>Promover en la ciudadanía la Identidad Shuar, Educación y la Bioeconomía, con inclusión y equidad; revitalizando la identidad cultural, mejorando la calidad de vida, y protegiendo la amazonia.</p>
+            </div>
+        </div>
+
+        <div class="column action">
+            <div class="title-box">
+                <h3>ACCIÓN</h3>
+            </div>
+            <div class="action-box action-box-right">
+                <p>Desarrollar proyectos que fomenten la Identidad Shuar, Educación y la Bioeconomía, bajo los principios sostenibles del pueblo Shuar para brindar oportunidades a las generaciones venideras en nuestros territorios sin afectar a otros grupos humanos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="why-support-box">
+        <h3>¿Por qué apoyar al Shuar? (Crowdfunding)</h3>
+        <p>
+            La Nacionalidad Shuar es tan importante como cualquier otro grupo humano, no somos ni más ni menos que los demás, poseemos un territorio, espiritualidad, una cosmovisión de mutuo respeto por la naturaleza.
+            Sin embargo, nuestro territorio cubre gran parte de la riqueza amazónica y minerales en el Ecuador donde otros grupos humanos cegados por la codicia usurpan mediante la corrupción estatal o privada, además, el crecimiento demográfico y la contaminación, son factores que destruyen todo sin pensar en el futuro.
+        </p>
+        <p>
+            La amazonia tiene pueblos originarios, personas que buscan difundir su identidad cultural, desarrollar su educación y generar una economía de manera sostenible, si nosotros estamos bien, la fauna, bosques y ríos de la amazonia estarán bien, somos quienes verdaderamente cuidamos los recursos para las futuras generaciones.
+            Sé un guardián de la amazonia apoyando al desarrollo de los Shuar amazónicos para juntos podamos cuidar el planeta de todos para las futuras generaciones.
+        </p>
+    </div>
+
+<!-- Botón de preguntas frecuentes -->
+<img class="faq-button" id="faqButton" src="images/nube.png" alt="Preguntas Frecuentes" onclick="toggleFAQ()">
+
+<!-- Globo de preguntas frecuentes -->
+<div class="faq-popup" id="faqPopup" onmouseout="hideFAQ()">
+    <p>Preguntas Frecuentes</p>
+    <!-- Agregar preguntas frecuentes o contenido relacionado -->
+</div>
+
+<!-- Chat de preguntas frecuentes -->
+<div class="faq-chat" id="faqChat">
+	<!-- Botón para cerrar el chat -->
+<span class="close-button" onclick="closeChat()"> <img src="images/boton-cerrar.png" alt="cerrar"> </span>
+    <h4><strong>Preguntas Frecuentes</strong> </h4>
+    <div class="faq-chat-content">
+        <p onclick="toggleAnswer(1)">Pregunta 1: Lorem ipsum?</p>
+        <div id="answer1" class="answer">Respuesta 1: Lorem ipsum dolor sit amet.</div>
+        <!-- Agregar más preguntas y respuestas según sea necesario -->
+    </div>
+</div>
+
+  <footer>
+	<div>
+		<h2>Contacto</h2>
+		<p>¡Envíanos tus comentarios y sugerencias!</p>
+		<!-- Formulario de contacto con estilos avanzados -->
+		<form>
+			<label for="nombre">Nombre:</label>
+			<input type="text" id="nombre" name="nombre" required>
+			<label for="mensaje">Mensaje:</label>
+			<textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+			<button type="submit">Enviar</button>
+		</form>
+	</div>
+	<div>
+		<h2>Redes Sociales</h2>
+		<!-- Enlaces a tus redes sociales con iconos -->
+		<div class="social-icons">
+			<a href="#" target="_blank">Facebook</a>
+			<a href="#" target="_blank">Twitter</a>
+			<a href="#" target="_blank">Instagram</a>
+		</div>
+	</div>
+	<div>
+		<h2>¿Cómo te sientes con nuestro sitio?</h2>
+		<!-- Botones de caritas para evaluar con efecto de escala al pasar el ratón -->
+		<div class="rating-buttons">
+			<button>😡</button>
+			<button>😐</button>
+			<button>😊</button>
+		</div>
+	</div>
+</footer>
+
+<!-- partial -->
+  <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,762 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+/* Agrega estos estilos al principio del archivo */
+
+/* Estilos para la barra superior */
+.top-bar {
+    background-color: #004643;
+    color: white;
+    padding: 3px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .language-dropdown {
+    position: relative;
+    display: inline-block;
+    color: #fff; /* Añadido para que el texto sea visible */
+  }
+  
+  #languageBtn {
+    background-color: transparent;
+    font-size: 15px;
+    color: #abd1c6;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  .dropdown-content a {
+    color: #000;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .language-dropdown:hover .dropdown-content {
+    display: block; /* Añadido para mostrar el menú al pasar el ratón */
+  }
+  
+  .social-icons a {
+    color: #abd1c6;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  
+  /* Agrega estilos específicos para tus iconos de redes sociales si es necesario */
+  
+/* Estilos básicos para la barra de navegación */
+.navbar {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  background-color: rgba(78, 78, 78, 0);
+  color: white;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  transition: transform 0s ease, background-color 1s ease;
+}
+
+/* Estilos para el logo */
+.navbar__brand img {
+  height: 70px;
+  width: 100px;
+  cursor: pointer;
+}
+
+/* Estilos para la lista de menú */
+.navbar__menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para cada elemento de la lista de menú */
+.navbar__menu li {
+  position: relative;
+  margin-right: 15px; /* Reducido el margen para mejor apariencia */
+}
+
+/* Estilos para los enlaces del menú */
+.navbar__menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px; /* Reducido el tamaño de la fuente */
+  padding: 8px 12px; /* Ajustado el relleno */
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Efecto de línea al pasar el ratón para el menú */
+.navbar__menu a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease;
+}
+
+.navbar__menu a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Estilos para el despliegue de opciones */
+.navbar__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(78, 78, 78, 0.9);
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+  transition: opacity 0.3s ease; /* Agregada transición de opacidad */
+  opacity: 0;
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__menu li:hover .navbar__submenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 1;
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__submenu a {
+  color: white;
+  padding: 8px 12px; /* Ajustado el relleno */
+  display: block;
+  font-size: 14px; /* Reducido el tamaño de la fuente */
+  text-align: left; /* Alineado el texto a la izquierda */
+  border: none; /* Eliminado el borde */
+  white-space: nowrap; /* Hace que el texto no se divida en líneas */
+}
+
+.navbar__submenu a::after {
+  content: ''; 
+  display: none; /* Asegurémonos de que las líneas no se muestren */
+}
+
+.navbar__submenu a:hover {
+  background-color: rgba(139, 139, 139, 0.137);
+}
+
+
+/* Estilos para el botón de donar */
+.donate-button {
+  background-color: #f9bc60;
+  color: #333;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.donate-button:hover {
+  background-color: #ddc980;
+}
+
+
+  /* Tu código actual de CSS va aquí */
+  
+
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: 0;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.787);
+  overflow:none; /* Cambia hidden por auto para mostrar la barra de desplazamiento */
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+.app__bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #001e1d69;
+  z-index: 1;
+  opacity: 0.8;
+}
+.app__bg__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+  width: 180%;
+  height: 180%;
+  transition: transform 1000ms ease, opacity 1000ms ease;
+  overflow: hidden;
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app__bg__image.current--image {
+  opacity: 1;
+  --image-translate-offset: 0;
+}
+  
+.app__bg__image.previous--image, .app__bg__image.next--image {
+  opacity: 0;
+}
+.app__bg__image.previous--image {
+  --image-translate-offset: -25%;
+}
+.app__bg__image.next--image {
+  --image-translate-offset: 25%;
+}
+
+.cardList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: auto;
+}
+.cardList__btn {
+  --btn-size: 35px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.cardList__btn.btn--left {
+  left: -5%;
+}
+.cardList__btn.btn--right {
+  right: -5%;
+}
+.cardList__btn .icon {
+  width: 100%;
+  height: 100%;
+}
+.cardList__btn .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.cardList .cards__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card {
+  --card-translateY-offset: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+  display: inline-block;
+  width: var(--card-width);
+  height: var(--card-height);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+  user-select: none;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000079;
+  z-index: 1;
+  transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+  opacity: calc(1 - var(--opacity));
+}
+.card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card.current--card {
+  --current-card-rotation-offset: 0;
+  --card-translateX-offset: 0;
+  --card-rotation-offset: var(--current-card-rotation-offset);
+  --card-scale-offset: 1.2;
+  --opacity: 0.8;
+}
+.card.previous--card {
+  --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+  --card-rotation-offset: 25deg;
+}
+.card.next--card {
+  --card-translateX-offset: calc(var(--card-width) * 1.1);
+  --card-rotation-offset: -25deg;
+}
+.card.previous--card, .card.next--card {
+  --card-scale-offset: 0.9;
+  --opacity: 0.4;
+}
+
+.infoList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: var(--card-height);
+  pointer-events: none;
+}
+.infoList .info__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.info {
+  margin-bottom: calc(var(--card-height) / 8);
+  margin-left: calc(var(--card-width) / 1.5);
+  transform: translateZ(2rem);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+}
+.info .text {
+  position: relative;
+  font-family: "Montserrat";
+  font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+  white-space: nowrap;
+  color: #fff;
+  width: fit-content;
+}
+.info .name,
+.info .location {
+  text-transform: uppercase;
+}
+.info .location {
+  font-weight: 800;
+}
+.info .location {
+  --mg-left: 40px;
+  --text-size-offset: 0.12;
+  font-weight: 600;
+  margin-left: var(--mg-left);
+  margin-bottom: calc(var(--mg-left) / 2);
+  padding-bottom: 0.8rem;
+}
+.info .location::before, .info .location::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  left: 0%;
+  transform: translate(calc(-1 * var(--mg-left)), -50%);
+}
+.info .location::before {
+  top: 50%;
+  width: 20px;
+  height: 5px;
+}
+.info .location::after {
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+}
+.info .description {
+  --text-size-offset: 0.065;
+  font-weight: 500;
+}
+.info.current--info {
+  opacity: 1;
+  display: block;
+}
+.info.previous--info, .info.next--info {
+  opacity: 0;
+  display: none;
+}
+
+.loading__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 200;
+}
+.loading__wrapper .loader--text {
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.loading__wrapper .loader {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.loading__wrapper .loader span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --card-width: 250px;
+    --card-height: 400px;
+  }
+}
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}
+/* Estilos específicos para la sección UNSA */
+.unsa-section {
+  background-color: #004643;
+  color: #fffffe;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  text-align: center;
+}
+
+.column {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 1%;
+}
+
+/* Cuadros de título */
+.intro-box, .title-box, .vision-box, .mission-box, .action-box,  .why-support-box{
+  background-color: #001e1d;
+  padding: 20px;
+  border: 2px solid #fffffe;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.title-box h2 {
+  color: #fffffe;
+  margin: 0;
+}
+
+/* Cuadros de descripción */
+.desc-box {
+  background-color: #001e1d;
+  padding: 20px;
+  border: 2px solid #fffffe;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.vision, .mission, .action {
+  text-align: center;
+}
+
+/* Ajuste de altura para descripción de acción */
+.action-box {
+  min-height: 140px; /* Ajusta la altura según tus preferencias */
+}
+
+.action-box p {
+  margin-bottom: 0; /* Elimina el espacio extra al final de la descripción */
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #001e1d;
+  color: #fff;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer div {
+  max-width: 400px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer h2 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer form label, form textarea, form button {
+  margin: 10px 0;
+}
+
+footer button {
+  background-color: #188b21;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #155a13;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .social-icons a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #ffc107;
+}
+
+footer .rating-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .rating-buttons button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+footer .rating-buttons button:hover {
+  transform: scale(1.2);
+}
+
+/* Botón de preguntas frecuentes */
+.faq-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+/* Globo de preguntas frecuentes */
+.faq-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+}
+
+.faq-popup p {
+  margin-bottom: 15px;
+}
+
+/* Actualiza estos estilos */
+
+.faq-chat {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #abd1c6;
+  color: #001e1d;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Actualiza estos estilos */
+
+.faq-chat-title {
+  background-color: #004643;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.faq-chat h4 {
+  margin: 0;
+  padding: 10px;
+  background-color: #004643; /* Color diferente para el fondo del título */
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.close-button img {
+  margin-top: 8px;
+  margin-right: 5px;
+  width: 25px; /* Ajusta el tamaño de la imagen según tus preferencias */
+}
+
+.close-button:hover {
+  color: #f9bc60;
+}
+
+.faq-chat-content {
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.faq-chat-content p {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #001e1d;
+}
+
+.answer {
+  display: none;
+  max-width: 100%;
+  padding: 10px;
+  background-color: #e8e4e6;
+  border-radius: 5px;
+  text-align: left;
+  color: #001e1d;
+  margin-top: 5px;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Donar</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GOOGLE FONTs -->
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- ANIMATE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+  <!-- Agregado para la barra superior -->
+  <div class="top-bar">
+    <div class="language-dropdown">
+      <button id="languageBtn">Idioma</button>
+      <div class="dropdown-content">
+        <!-- Agrega aquí las opciones de idioma -->
+        <a href="#">Español</a>
+        <a href="#">Inglés</a>
+        <!-- Agrega más idiomas si es necesario -->
+      </div>
+    </div>
+    <div class="social-icons">
+      <!-- Agrega aquí tus iconos de redes sociales -->
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <!-- Agrega más iconos según sea necesario -->
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar__brand">
+      <a title="Logo" href="../../index.html">
+        <img src="../../images/logoB.png" alt="Logo (Corporación UNSA)" />
+      </a>
+    </div>
+    <nav class="navbar__menu">
+      <ul>
+        <li>
+          <a href="../../index.html">Inicio</a>
+          <ul class="navbar__submenu">
+            <li><a href="#">Opción 1 (paginas webs secundarias)</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <!-- Agrega más opciones según sea necesario -->
+          </ul>
+        </li>
+        <li><a href="../../pages/noticias/noticias.html">Noticias</a></li>
+        <li><a href="../../pages/acerca/acerca.html">Acerca de</a></li>
+        <li><a href="../../pages/contacto/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="donar.html">
+      <button class="donate-button">Donar</button>
+    </a>  </header>
+
+<!-- Contenido de la Página -->
+<div class="container">
+  <div class="header">
+    <img src="../../images/group1.jpg" alt="Equipo de la Corporación UNSA">
+    <h1>¡Apoya a la Corporación UNSA!</h1>
+    <p class="info-text">
+      La Corporación UNSA trabaja incansablemente para mejorar la educación y el bienestar en nuestra comunidad. Con tu generosa donación, podemos llegar aún más lejos y marcar la diferencia en la vida de muchas personas. ¡Únete a nosotros en este viaje de impacto positivo!
+    </p>
+  </div>
+
+  <div class="card" id="amountCard">
+    <h2>Selecciona una cantidad:</h2>
+    <div class="amount-options">
+      <div class="amount-option" onclick="selectAmount(10)">10 USD</div>
+      <div class="amount-option" onclick="selectAmount(25)">25 USD</div>
+      <div class="amount-option" onclick="selectAmount(50)">50 USD</div>
+      <div class="amount-option" onclick="selectAmount(100)">100 USD</div>
+      <div class="amount-option" onclick="toggleCustomAmount(); selectAmount('')">Otro</div>
+    </div>
+    <div class="custom-amount-input">
+      <input type="text" id="customAmount" placeholder="Cantidad en USD">
+      <button onclick="donateCustomAmount()">Donar</button>
+    </div>
+  </div>
+
+  <div class="card" id="paymentOptionsCard">
+    <h2>Elige tu método de pago:</h2>
+    <button id="stripeBtn">Donar con Stripe</button>
+    <button id="paypalBtn">Donar con PayPal</button>
+  </div>
+</div>
+
+  <footer>
+    <div>
+      <h2>Contacto</h2>
+      <p>¡Envíanos tus comentarios y sugerencias!</p>
+      <!-- Formulario de contacto con estilos avanzados -->
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div>
+      <h2>Redes Sociales</h2>
+      <!-- Enlaces a tus redes sociales con iconos -->
+      <div class="social-icons">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div>
+      <h2>¿Cómo te sientes con nuestro sitio?</h2>
+      <!-- Botones de caritas para evaluar con efecto de escala al pasar el ratón -->
+      <div class="rating-buttons">
+        <button>😡</button>
+        <button>😐</button>
+        <button>😊</button>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="scripts.js"></script>
+
+
+  
+</body>
+
+</html>
